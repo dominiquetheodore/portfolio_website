@@ -1,256 +1,230 @@
-<!-- submission for Udacity Full Stack Web Developer Course P2: Portfolio Website -->
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Udacity Portfolio website</title>
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        
-        <!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		
-        <!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-		
-        <!-- custom CSS -->
-		<link rel="stylesheet" href="style.css">
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Udacity Portfolio website</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
-        <script>
-        /**
-         * makes the navbar transparent when the page is scrolled
-         */
-        function checkScroll(){
-            var startY = $('.navbar').height(); //The point where the navbar changes in px
-            // the following function adds a class scrolled when scrolling is detected
-            if($(window).scrollTop() > startY){
-                $('.navbar').addClass("scrolled");
-                $('.navbar-nav').addClass("scrolled");
-            }else{
-                $('.navbar').removeClass("scrolled");
-                $('.navbar-nav').removeClass("scrolled");
-            }
-        }
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-        $(document).ready(function(){
-        if($('.navbar').length > 0){
-            $(window).on("scroll load resize", function(){
-                checkScroll();
-            });
-        }
-        });
-        </script>
-    </head>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <body>
-        <!-- first project modal start -->
-        <div id="movieModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-            <div class="modal-dialog">
-                <div class="modal-content">
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- custom js -->
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <!-- first project modal start -->
+    <div id="movieModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h4 class="modal-title text-uppercase">Movie Trailer Website</h4>
                 </div>
                 <div class="modal-body">    
                     <!-- carousel displays project screenshots -->
                     <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
                         <!-- Wrapper for slides -->
-                        <div class="carousel-inner" role="listbox" style="margin:auto">
+                        <div class="carousel-inner" role="listbox">
                           <div class="item active">
-                            <img src="./img/screen1.png"> 
-                          </div>
-                          <div class="item">
-                            <img src="./img/screen2.png">
-                          </div>
-                      
-                          <div class="item">
-                            <img src="./img/screen3.png">
-                          </div>
+                            <img alt="screenshot 1" src="./img/screen1.png"> 
                         </div>
-                        <br>
+                        <div class="item">
+                            <img alt="screenshot 2" src="./img/screen2.png">
+                        </div>
 
-                        <!-- Left and right controls -->
-                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+                        <div class="item">
+                            <img alt="screenshot 3" src="./img/screen3.png">
+                        </div>
                     </div>
-                    <!-- end carousel code -->
+                    <br>
 
-                    <!-- project description -->        
-                    <p>This is my first project for the Udacity nanodegree. It consists of server side code that stores a list of movies and their info (title, release year, storyline, poster etc) in a Python data structure. The page is dynamically generated from the data structure, and also allows the user to view the movie trailer.</p>
-                    <a href="https://github.com/dominiquetheodore/movie_trailer_website">Source code</a>
-                </div><!-- End of Modal body -->
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <!-- end carousel code -->
+
+                <!-- project description -->        
+                <p>This is my first project for the Udacity nanodegree. It consists of server side code that stores a list of movies and their info (title, release year, storyline, poster etc) in a Python data structure. The page is dynamically generated from the data structure, and also allows the user to view the movie trailer.</p>
+                <a href="https://github.com/dominiquetheodore/movie_trailer_website">Source code</a>
+            </div><!-- End of Modal body -->
             
-                <div class="modal-footer">
-                    <div class="form-group">
-                        <div class="col-md-12">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
+            <div class="modal-footer">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
-                </div><!-- End of Modal content -->
-            </div><!-- End of Modal dialog -->
-        </div>
-        <!-- modal ends -->
-
-        <!-- second project modal start -->
-        <div id="portfolioModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times</button>
-                    <h4 class="modal-title text-uppercase">Portfolio Website</h4>
-                </div>
-                <div class="modal-body">    
-                    <!-- carousel start -->
-                    <div id="myCarousel2" class="carousel slide text-center" data-ride="carousel">
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner" role="listbox" style="margin:auto">
-                          <div class="item active">
-                            <img src="./img/screen5.png"> 
-                          </div>
-                          <div class="item">
-                            <img src="./img/screen6.png">
-                          </div>
-                      
-                          <div class="item">
-                            <img src="./img/screen4.png">
-                          </div>
-                        </div>
-                        <br>
-
-                        <!-- Left and right controls -->
-                        <a class="left carousel-control" href="#myCarousel2" role="button" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="right carousel-control" href="#myCarousel2" role="button" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                    <!-- carousel end -->
-
-                    <p>Our second assignment was to create a portfolio website to showcase our different projects through the course. The design is based on a mockup provided by the instructors, with a couple of extra features such as a navbar to give that unique touch.</p>
-                    <p><a href="https://github.com/dominiquetheodore/portfolio_website">Source code</a></p>
-                </div><!-- End of Modal body -->
-            
-                <div class="modal-footer">
-                    <div class="form-group">
-                        <div class="col-md-12">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-                </div><!-- End of Modal content -->
-            </div><!-- End of Modal dialog -->
-        </div>
-        <!-- modal ends -->
-
-        <!-- navbar code -->
-        <nav class="navbar navbar-default navbar-fixed-top">
-          <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#"></a>
             </div>
+        </div><!-- End of Modal content -->
+    </div><!-- End of Modal dialog -->
+</div>
+<!-- modal ends -->
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
-            </div><!-- /.navbar-collapse -->
-          </div><!-- /.container-fluid -->
-        </nav>
-        <!-- navbar ends here -->
+<!-- second project modal start -->
+<div id="portfolioModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title text-uppercase">Portfolio Website</h4>
+            </div>
+            <div class="modal-body">    
+                <!-- carousel start -->
+                <div id="myCarousel2" class="carousel slide text-center" data-ride="carousel">
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                      <div class="item active">
+                        <img alt="screenshot 4" src="./img/screen5.png"> 
+                    </div>
+                    <div class="item">
+                        <img alt="screenshot 5" src="./img/screen6.png">
+                    </div>
 
-        <!-- page content starts here -->
-        <div class="container">
-            <!-- logo and title -->
-            <div class="row">
-                <div class="col-xs-3 col-md-3" style="padding:0px;">
-                    <img class="brand image-responsive" src="./img/U_360x360px.jpg" />
+                    <div class="item">
+                        <img alt="screenshot 6" src="./img/screen4.png">
+                    </div>
                 </div>
-                <div class="col-xs-9 col-md-9 text-right" style="margin-top:0px;">
+                <br>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel2" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel2" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <!-- carousel end -->
+
+            <p>Our second assignment was to create a portfolio website to showcase our different projects through the course. The design is based on a mockup provided by the instructors, with a couple of extra features such as a navbar to give that unique touch.</p>
+            <p><a href="https://github.com/dominiquetheodore/portfolio_website">Source code</a></p>
+        </div><!-- End of Modal body -->
+
+        <div class="modal-footer">
+            <div class="form-group">
+                <div class="col-md-12">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div><!-- End of Modal content -->
+</div><!-- End of Modal dialog -->
+</div>
+<!-- modal ends -->
+
+<header>
+    <!-- navbar code -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
+<!-- navbar ends here -->
+</header>
+
+<!-- page content starts here -->
+<main>
+    <div class="container">
+        <!-- logo and title -->
+        <section>
+            <div class="row">
+                <div class="logo col-xs-3 col-md-3">
+                    <img alt="udacity logo" class="brand image-responsive" src="./img/U_360x360px.jpg" />
+                </div>
+                <div class="header col-xs-9 col-md-9 text-right">
                     <h1 class="title-super text-right text-uppercase">Dominique Theodore</h1>
                     <h4 class="text-right text-uppercase">FRONT END NINJA</h4>
                 </div>
             </div>
-            <!-- end logo and title -->
+        </section>
+        <!-- end logo and title -->
 
-            <!-- hr -->
+        <!-- hr -->
+        <section>
             <div class="row">
                 <div class="col-md-12">
-                <hr style="height:3px;border:none;color:#7d97ad;background-color:#7d97ad;" />
+                    <hr />
                 </div>
             </div>
-            <!-- end hr -->
+        </section>
+        <!-- end hr -->
 
-            <!-- hero image -->
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <img class="image-responsive" style="max-width:100%" src="./img/laptop.jpg">
-                    </div>
+        <!-- hero image -->
+        <section>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <img alt="hero" class="hero image-responsive" src="./img/laptop.jpg">
                 </div>
-            <!-- end hero -->
+            </div>
+        </section>
+        <!-- end hero -->
 
+        <section>
             <div class="row">
                 <div class="col-md-12">
-                    <h3 style="color:#7d97ad">Featured Work</h3>
+                    <h3>Featured Work</h3>
                 </div>  
             </div>
+        </section>
+
+        <section>
             <div class="row text-center">
                 <div class="col-md-4">
-                    <img class="featured" src="./img/screen1.png" style="height:250px; max-width:250px" data-toggle="modal" data-target="#movieModal">
+                    <img alt="project 1" class="featured" src="./img/screen1.png" data-toggle="modal" data-target="#movieModal">
                     <h3 class="text-uppercase">Movie Trailer</h3>
                     <a class="featured_link" href="https://github.com/dominiquetheodore/movie_trailer_website">Source</a>
                 </div>
                 <div class="col-md-4">
-                    <img class="featured" src="./img/screen4.png" style="height:250px; max-width:250px" data-toggle="modal" data-target="#portfolioModal">
+                    <img alt="project 2" class="featured" src="./img/screen4.png" data-toggle="modal" data-target="#portfolioModal">
                     <h3 class="text-uppercase">Portfolio</h3>
                     <a class="featured_link" href="https://github.com/dominiquetheodore/portfolio_website">Source</a>
                 </div>
                 <div class="col-md-4">
-                    <img class="featured" src="http://www.placehold.it/150x150?text=Coming+Soon" style="height:250px; max-width:250px">
+                    <img alt="project 3" class="featured" src="http://www.placehold.it/150x150?text=Coming+Soon">
                     <h3 class="text-uppercase">Multi user blog</h3>
                     <a class="featured_link" href="#">Source</a>
                 </div>
             </div>
-        </div>
-        <!-- content ends here -->
-
-        <!-- some media queries to resize the logo and title when the page is resized -->
-        <style>
-            @media screen and (max-width:450px) {
-                .title-super {
-                    font-size: 20px;
-                }
-                .brand {
-                    margin-left:10px;
-                    max-width:50px;
-                }
-            }
-            @media screen and (max-width:550px) {
-                .brand {
-                    margin-left:10px;
-                }
-            }
-        </style>
-    </body>
+        </section>
+    </div>
+</main>
+<!-- content ends here -->
+</body>
 </html>

@@ -1,5 +1,5 @@
 * {
-  border-radius: 0 !important;
+	border-radius: 0 !important;
 }
 
 html,body{
@@ -8,8 +8,7 @@ html,body{
 	color:#2d3c49;
 	max-width:100%;
 }
-
-//add margins on larger displays
+/* some media queries to resize the logo and title when the page is resized */
 @media screen and (min-width:550px) {
 	body {
 		margin-left:100px;
@@ -23,12 +22,18 @@ h1 {
 }
 
 hr{
-	height: 30px;
-	color: #7d97ad;
+	height:3px;
+	border:none;
+	color:#7d97ad;
+	background-color:#7d97ad;
 }
 
 h2 {
 	color:red;
+}
+
+h3 {
+	color:#7d97ad;
 }
 
 .container {
@@ -36,12 +41,24 @@ h2 {
 	max-width:100%;
 }
 
+.logo, .header {
+	padding:0px;
+}
+
+.hero {
+	max-width:100%;
+}
+
+.carousel-inner {
+	margin:auto;
+}
+
 .carousel-inner > .item > img {
-    margin: 0 auto;
+	margin: 0 auto;
 }
 
 .carousel-control.left, .carousel-control.right {
-    background-image: none
+	background-image: none
 }
 
 .brand {
@@ -53,20 +70,20 @@ h2 {
 }
 
 .navbar {
-    -webkit-transition: all 0.6s ease-out;
-    -moz-transition: all 0.6s ease-out;
-    -o-transition: all 0.6s ease-out;
-    -ms-transition: all 0.6s ease-out;
-    transition: all 0.6s ease-out;
+	-webkit-transition: all 0.6s ease-out;
+	-moz-transition: all 0.6s ease-out;
+	-o-transition: all 0.6s ease-out;
+	-ms-transition: all 0.6s ease-out;
+	transition: all 0.6s ease-out;
 }
 
-//make the navbar transparent when scrolled
+/* make the navbar transparent when scrolled */
 .navbar.scrolled {
-    background: rgba(0, 0, 0, 0.3); //NON-IE
+	background: rgba(0, 0, 0, 0.3);
 }
 
 .navbar-nav.scrolled {
-    background: rgba(0, 0, 0, 0.3); //NON-IE
+	background: rgba(0, 0, 0, 0.3);
 }
 
 .nav.navbar-nav.scrolled li.active a { background-color: rgba(0, 0, 0, 0.2); }
@@ -86,9 +103,22 @@ h2 {
 	border-radius:0px;
 }
 
+#movieModal {
+	display:none;
+}
+
+#portfolioModal {
+	display:none;
+}
+
+.featured {
+	height:250px; 
+	max-width:250px;
+}
+
 .featured:hover {
-    opacity: 0.6;
-    filter: alpha(opacity=60); /* For IE8 and earlier */
+	opacity: 0.6;
+	filter: alpha(opacity=60); /* For IE8 and earlier */
 }
 
 .featured_link {
@@ -96,5 +126,20 @@ h2 {
 }
 
 .featured_link:hover {
-    color:#02b3e4;
+	color:#02b3e4;
+}
+
+@media screen and (max-width:450px) {
+	.title-super {
+		font-size: 20px;
+	}
+	.brand {
+		margin-left:10px;
+		max-width:50px;
+	}
+}
+@media screen and (max-width:550px) {
+	.brand {
+		margin-left:10px;
+	}
 }
